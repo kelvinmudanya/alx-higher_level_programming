@@ -1,47 +1,47 @@
 #!/usr/bin/python3
-class Square:
-    """ A class that defines a square by its size
-    """
-    def __init__(self, size=0):
-        """ Method to initialize the square object
-        """
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+""" Square module """
 
-    def area(self):
-        """ Method that returns the square are of the object
+
+class Square:
+    """ Declares a square class """
+
+    def __init__(self, size=0) -> None:
         """
-        return (self.__size ** 2)
+        Intializes the attributes
+
+        Args:
+            size: size of square
+        """
+        self.size = size
 
     @property
     def size(self):
-        """ Method to returns the size value
-        """
+        """ Gets the attribute to be used in class """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """ Method to set the size value of the square object
-        """
-        if not isinstance(value, int):
+        if type(value) is not int:
             raise TypeError("size must be an integer")
         elif value < 0:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
 
+    def area(self):
+        """ Computes area of a square """
+        return self.__size ** 2
+
     def my_print(self):
-        """ Method that prints a # square according
-        to the size value
-        """
-        if not self.__size:
+        """ Prints in stdout the square with the character # """
+        if self.__size == 0:
             print()
         else:
-            for i in range(self.__size):
-                for j in range(self.__size):
-                    print("#", end='')
+            integer = 0
+            while integer < self.__size:
+                number = 0
+                while number < self.__size:
+                    print("{}".format("#"), end='')
+                    number += 1
                 print()
+                integer += 1
