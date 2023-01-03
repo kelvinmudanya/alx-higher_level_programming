@@ -1,0 +1,62 @@
+The ``3-say_my_name`` module
+============================
+
+Using ``say_my_name``
+
+----------------------------
+
+Importing method:
+	  >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now use it:
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+    >>> say_my_name("Marco")
+    My name is Marco 
+
+    >>> say_my_name("Sofía", 8)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(124, "Newton")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Ricky", str(14))
+    My name is Ricky 14
+
+    >>> say_my_name(8, 8)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("María", "")
+    My name is María 
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Carla", "Mendez", "Pritchet")
+    Traceback (most recent call last):
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+    >>> say_my_name(" ", " ")
+    My name is    
+
+    >>> say_my_name("", "")
+    My name is  
+
+    >>> say_my_name("Diana", ["Sofía"])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(["Sofía"], "García")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(str[123], "García")
+    Traceback (most recent call last):
+    TypeError: 'type' object is not subscriptable
