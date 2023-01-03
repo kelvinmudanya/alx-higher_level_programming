@@ -1,0 +1,136 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+Importing method:
+	  >>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+Tests for positive integers parameters.
+
+      >>> add_integer(1, 2)
+      3
+      >>> add_integer(100, 67)
+      167
+      >>> add_integer(9, 15)
+      24
+      >>> add_integer(1, 2)
+      3
+      >>> add_integer(376187236178263781268376128, 812738971298371298731)
+      376188048917235079639674859
+
+
+Tests for negative integers parameters.
+
+      >>> add_integer(1, -2)
+      -1
+      >>> add_integer(-8, -19)
+      -27
+      >>> add_integer(-10, 77)
+      67
+      >>> add_integer(100, -2)
+      98
+
+Tests for positive float parameters.
+
+      >>> add_integer(1.4, 2)
+      3
+      >>> add_integer(1024.87, 56.7)
+      1080
+      >>> add_integer(12.8, 33.1)
+      45
+      >>> add_integer(6.2, 10)
+      16
+      >>> add_integer(3.3, 27)
+      30
+
+Test for negative float parameters.
+
+     >>> add_integer(-2.4, -6.1)
+     -8
+     >>> add_integer(-5, -12.3)
+     -17
+     >>> add_integer(-1.2, 12)
+     11
+     >>> add_integer(9, -13.3)
+     -4
+     >>> add_integer(-1.6, -4)
+     -5
+     >>> add_integer(100.3, -2)
+     98
+
+Test for just one parameter passed.
+
+     >>> add_integer(50)
+     148
+     >>> add_integer(8)
+     106
+     >>> add_integer(15)
+     113
+     >>> add_integer(2)
+     100
+     >>> add_integer(1050)
+     1148
+
+Test for more than two parameters passed.
+
+     >>> add_integer(1, 2 ,3)
+     Traceback (most recent call last):
+     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Test for none int or float.
+
+     >>> add_integer(1, "2")
+     Traceback (most recent call last):
+     TypeError: b must be an integer
+
+     >>> add_integer(5, "String")
+     Traceback (most recent call last):
+     TypeError: b must be an integer
+
+     >>> add_integer()
+     Traceback (most recent call last):
+     TypeError: add_integer() missing 1 required positional argument: 'a'
+
+     >>> add_integer("c", "String")
+     Traceback (most recent call last):
+     TypeError: a must be an integer
+
+     >>> add_integer(12, [1,2,3])
+     Traceback (most recent call last):
+     TypeError: b must be an integer
+
+     >>> add_integer([4,5,6], 5)
+     Traceback (most recent call last):
+     TypeError: a must be an integer
+
+     >>> add_integer(2, int("String"))
+     Traceback (most recent call last):
+     ValueError: invalid literal for int() with base 10: 'String'
+
+     >>> add_integer(5, float("String"))
+     Traceback (most recent call last):
+     ValueError: could not convert string to float: 'String'
+
+     >>> add_integer(int("String"), 10)
+     Traceback (most recent call last):
+     ValueError: invalid literal for int() with base 10: 'String'
+
+     >>> add_integer(None)
+     Traceback (most recent call last):
+     TypeError: a must be an integer
+
+     >>> add_integer(a)
+     Traceback (most recent call last):
+     NameError: name 'a' is not defined
+
+     >>> add_integer(float('inf'), 2)
+     Traceback (most recent call last):
+     OverflowError: cannot convert float infinity to integer
+
+     >>> add_integer(float("Nan"))
+     Traceback (most recent call last):
+     ValueError: cannot convert float NaN to integer
