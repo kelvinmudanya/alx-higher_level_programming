@@ -1,0 +1,118 @@
+The ``2-matrix_divided`` module
+==============================
+
+Using ``matrix_divided``
+
+------------------------
+
+Importing method:
+	  >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+
+Basic int, float cases (negatives and positives).
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+    >>> matrix_divided([[-2, 3 , 4],[5, 6, 7]], 4)
+    [[-0.5, 0.75, 1.0], [1.25, 1.5, 1.75]]
+
+    >>> matrix_divided([[2, -3 , 4],[5, 6, 7]], 4)
+    [[0.5, -0.75, 1.0], [1.25, 1.5, 1.75]]
+
+    >>> matrix_divided([[2, 3 , -4],[5, 6, 7]], 4)
+    [[0.5, 0.75, -1.0], [1.25, 1.5, 1.75]]
+
+    >>> matrix_divided([[2, 3 , 4],[-5, 6, 7]], 4)
+    [[0.5, 0.75, 1.0], [-1.25, 1.5, 1.75]]
+
+    >>> matrix_divided([[2, 3 , 4],[5, -6, 7]], 4)
+    [[0.5, 0.75, 1.0], [1.25, -1.5, 1.75]]
+
+    >>> matrix_divided([[2, 3 , 4],[5, 6, -7]], 4)
+    [[0.5, 0.75, 1.0], [1.25, 1.5, -1.75]]
+
+    >>> matrix_divided([[-2, -3 , -4],[-5, -6, -7]], 4)
+    [[-0.5, -0.75, -1.0], [-1.25, -1.5, -1.75]]
+
+    >>> matrix_divided([[7.12, 4.3, 18.2], [2.25, 9.14, 22.3]], 5)
+    [[1.42, 0.86, 3.64], [0.45, 1.83, 4.46]]
+
+    >>> matrix_divided([[-7.12, 4.3, 18.2], [2.25, 9.14, 22.3]], 5)
+    [[-1.42, 0.86, 3.64], [0.45, 1.83, 4.46]]
+
+    >>> matrix_divided([[7.12, -4.3, 18.2], [2.25, 9.14, 22.3]], 5)
+    [[1.42, -0.86, 3.64], [0.45, 1.83, 4.46]]
+
+    >>> matrix_divided([[7.12, 4.3, -18.2], [2.25, 9.14, 22.3]], 5)
+    [[1.42, 0.86, -3.64], [0.45, 1.83, 4.46]]
+
+    >>> matrix_divided([[7.12, 4.3, 18.2], [-2.25, 9.14, 22.3]], 5)
+    [[1.42, 0.86, 3.64], [-0.45, 1.83, 4.46]]
+
+    >>> matrix_divided([[7.12, 4.3, 18.2], [2.25, -9.14, 22.3]], 5)
+    [[1.42, 0.86, 3.64], [0.45, -1.83, 4.46]]
+
+    >>> matrix_divided([[7.12, 4.3, 18.2], [2.25, 9.14, -22.3]], 5)
+    [[1.42, 0.86, 3.64], [0.45, 1.83, -4.46]]
+
+    >>> matrix_divided([[-7.12, -4.3, -18.2], [-2.25, -9.14, -22.3]], 5)
+    [[-1.42, -0.86, -3.64], [-0.45, -1.83, -4.46]]
+
+Parameter div, cases.
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], None)
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], -7)
+    [[-0.14, -0.29, -0.43], [-0.57, -0.71, -0.86]]
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], "Hello")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 6234864238764)
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Matrix, cases.
+
+   >>> matrix_divided()
+   Traceback (most recent call last):
+   TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+   >>> matrix_divided([[], [4, 5, 6]], 6)
+   Traceback (most recent call last):
+   TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+   >>> matrix_divided([[1, "Hello", 3], [4, 5, 6]], 6)
+   Traceback (most recent call last):
+   TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+   >>> matrix_divided([], 6)
+   Traceback (most recent call last):
+   TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+   >>> matrix_divided([[1, 2, 3], [2, 3, 4, 5]], 6)
+   Traceback (most recent call last):
+   TypeError: Each row of the matrix must have the same size
+
+   >>> matrix_divided([['a', 'b', 'c'], [2, 3, 4]], 6)
+   Traceback (most recent call last):
+   TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+   >>> matrix_divided(2, 6, 3)
+   Traceback (most recent call last):
+   TypeError: matrix_divided() takes 2 positional arguments but 3 were given
