@@ -1,0 +1,81 @@
+The ``5-text_identation`` module
+================================
+
+Using ``text_identation``
+
+--------------------------------
+
+Importing method:
+	  >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+    >>> text_indentation(10)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> text_indentation(""" We are learning now Python Programming Language""", 10)
+    Traceback (most recent call last):
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+    >>> text_indentation("This is a string. text")
+    This is a string.
+    <BLANKLINE>
+    text
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    >>> text_indentation("""...""")
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+    >>> text_indentation(""": is important to know about history, science and tech. Have yo	u tried to study something related? give it a try.""")
+    :
+    <BLANKLINE>
+    is important to know about history, science and tech.
+    <BLANKLINE>
+    Have yo     u tried to study something related?
+    <BLANKLINE>
+    give it a try.
+    <BLANKLINE>
+
+    >>> text_indentation("""Let's try with: a lot of spaces         is it working?		even more spaces please. Check""")
+    Let's try with:
+    <BLANKLINE>
+    a lot of spaces         is it working?
+    <BLANKLINE>
+    even more spaces please.
+    <BLANKLINE>
+    Check
+
+    >>> text_indentation("""Jump\n: Double jump \n\n ?? Tripleta \n\n\n die""")
+    Jump
+    :
+    <BLANKLINE>
+    Double jump 
+    <BLANKLINE>
+     ?
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    Tripleta 
+    <BLANKLINE>
+    <BLANKLINE>
+     die
+
+     >>> text_indentation("""""")
+
+     >>> text_indentation("""     Space at beginning doesnt count!""")
+     Space at beginning doesnt count!
+
+     >>> text_indentation(""" """)
+
+     >>> text_indentation(None)
+     Traceback (most recent call last):
+     TypeError: text must be a string
