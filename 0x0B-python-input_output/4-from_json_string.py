@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-""" method that appends a string at the end of a text file """
+""" method to decode """
+import json
 
 
-def append_write(filename="", text=""):
-    """ method append_write definition
+def from_json_string(my_str):
+    """ definition to decode method
     Args:
-        filename (str): the passed file to read and append to
-        text (str): the string to append on the file
+        my_str (str): to decode from json string to python strcuture
+    Returns:
+        an object (python data structure)
     """
-    with open(filename, encoding='utf-8', mode='a') as file:
-        return file.write(text)
+    return json.loads(my_str)
