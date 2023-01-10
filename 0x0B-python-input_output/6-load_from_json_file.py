@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-""" method to decode """
+""" method that creates an object from a json file """
 import json
 
 
-def from_json_string(my_str):
-    """ definition to decode method
-    Args:
-        my_str (str): to decode from json string to python strcuture
-    Returns:
-        an object (python data structure)
-    """
-    return json.loads(my_str)
+def load_from_json_file(filename):
+    """ json method definition creates an object from json file """
+    with open(filename, encoding='utf-8') as file:
+        return json.load(file)
