@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-""" method that returns the number of lines od a text file """
+""" method that writes a string to a text file """
 
 
-def number_of_lines(filename=""):
-    """ method num of lines
+def write_file(filename="", text=""):
+    """ write_file definition
     Args:
-        filename (str): the passed file
+        filename(str): the passed file to write in
+        text (str): the string to write  in the passed file
     """
-    with open(filename, encoding='utf-8') as file:
-        return len(file.readlines())
+    with open(filename, encoding='utf-8', mode='w') as file:
+        return file.write(text)
