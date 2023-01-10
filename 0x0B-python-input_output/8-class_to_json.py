@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" method that creates an object from a json file """
-import json
+""" JSON serialization of an object """
 
 
-def load_from_json_file(filename):
-    """ json method definition creates an object from json file """
-    with open(filename, encoding='utf-8') as file:
-        return json.load(file)
+def class_to_json(obj):
+    """  returns the dictionary description with simple data structure
+    (list, dictionary, string, integer and boolean) for JSON serialization
+    of an object """
+    return obj.__dict__
