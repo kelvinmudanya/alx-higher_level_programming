@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-""" JSON dude """
+""" json method that writes an object to a text file """
 import json
 
 
-def to_json_string(my_obj):
-    """ json definition method
+def save_to_json_file(my_obj, filename):
+    """ json method definition
     Args:
-        my_obj(str): passed object to represent
-    Returns:
-        The JSON representation of an object
+        my_obj (str): to write
+        filename (str): file to write in using json representation
     """
-    return json.dumps(my_obj)
+    with open(filename, encoding='utf-8', mode='w') as file:
+        json.dump(my_obj, file)
